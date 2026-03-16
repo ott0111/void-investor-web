@@ -459,3 +459,131 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('🔄 Social media tracking enabled - updates every 60 seconds (silent mode)');
 });
+
+// Investor and Sponsor Contact Functions
+function showInvestorMessage() {
+    const message = "📧 DM us on Twitter with: 'Hello Void Esports, I'm interested in learning more about investment opportunities.'";
+    
+    // Show the message
+    const messageDiv = document.createElement('div');
+    messageDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, rgba(109, 40, 217, 0.95), rgba(168, 85, 247, 0.95));
+        color: white;
+        padding: 2rem 3rem;
+        border-radius: 20px;
+        font-size: 1.1rem;
+        z-index: 10000;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        animation: messageSlideIn 0.3s ease;
+        max-width: 500px;
+    `;
+    messageDiv.innerHTML = `
+        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">🚀 Ready to Invest?</h3>
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+            ${message}
+        </p>
+        <button onclick="this.parentElement.remove(); window.open('https://x.com/voidesports2x?s=21', '_blank');" style="
+            background: white;
+            color: #6d28d9;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 1rem;
+        ">Go to Twitter</button>
+        <button onclick="this.parentElement.remove()" style="
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+        ">Close</button>
+    `;
+    document.body.appendChild(messageDiv);
+    
+    // Add animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes messageSlideIn {
+            from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+function showSponsorMessage() {
+    const message = "📧 DM us on Twitter with: 'Hello Void Esports, I'm interested in sponsorship opportunities.'";
+    
+    // Show the message
+    const messageDiv = document.createElement('div');
+    messageDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, rgba(109, 40, 217, 0.95), rgba(168, 85, 247, 0.95));
+        color: white;
+        padding: 2rem 3rem;
+        border-radius: 20px;
+        font-size: 1.1rem;
+        z-index: 10000;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        animation: messageSlideIn 0.3s ease;
+        max-width: 500px;
+    `;
+    messageDiv.innerHTML = `
+        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">🤝 Partner with Us!</h3>
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+            ${message}
+        </p>
+        <button onclick="this.parentElement.remove(); window.open('https://x.com/voidesports2x?s=21', '_blank');" style="
+            background: white;
+            color: #6d28d9;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 1rem;
+        ">Go to Twitter</button>
+        <button onclick="this.parentElement.remove()" style="
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+        ">Close</button>
+    `;
+    document.body.appendChild(messageDiv);
+    
+    // Add animation if not already added
+    if (!document.querySelector('style[data-message-animation]')) {
+        const style = document.createElement('style');
+        style.setAttribute('data-message-animation', 'true');
+        style.textContent = `
+            @keyframes messageSlideIn {
+                from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+                to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
