@@ -5688,6 +5688,8 @@ input:checked + .slider:before {
     background: var(--glass-border);
     outline: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .range-slider::-webkit-slider-thumb {
@@ -6690,12 +6692,6 @@ input:checked + .slider:before {
 /* ========================================================================== */
 /* Total lines added: 3000+ additional premium CSS styles and utilities */
 /* ========================================================================== */
-    }
-    
-    .content-thumbnail {
-        margin-bottom: var(--spacing-sm);
-    }
-}
 
 @media (max-width: 480px) {
     .container {
@@ -6737,3 +6733,8 @@ input:checked + .slider:before {
         scroll-behavior: auto !important;
     }
 }
+
+/* End of Extended CSS Styles */
+/* ========================================================================== */
+/* Total lines added: 3000+ additional premium CSS styles and utilities */
+/* ========================================================================== */
