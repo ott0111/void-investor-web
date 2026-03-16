@@ -1,67 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Void Esports</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Void Esports - Professional esports organization competing at the highest level">
+    <meta name="keywords" content="esports, gaming, void esports, professional gaming">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Void Esports | Professional Gaming Organization</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-<header>
-<img src="assets/logo.png">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo(2).png" alt="Void Esports" onerror="this.style.display='none'">
+                <span>VOID ESPORTS</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="staff.html" class="nav-link">Staff</a></li>
+                <li><a href="investors.html" class="nav-link">Investors</a></li>
+                <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="staff.html">Staff</a>
-<a href="investors.html">Investors</a>
-<a href="sponsors.html">Sponsors</a>
-</nav>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content fade-in">
+            <h1 class="hero-title">VOID ESPORTS</h1>
+            <p class="hero-subtitle">Redefining Competitive Gaming Excellence</p>
+            <div class="hero-buttons">
+                <a href="investors.html" class="neon-button">Invest in Victory</a>
+                <a href="sponsors.html" class="neon-button">Partner With Us</a>
+            </div>
+        </div>
+    </section>
 
-<div class="hero">
-<h1>Void Esports</h1>
-<p>Competitive Gaming • Content • Community</p>
-</div>
+    <!-- Featured Teams -->
+    <section class="section">
+        <h2 class="section-title">Elite Roster</h2>
+        <div class="grid grid-3">
+            <div class="glass-card">
+                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3 class="staff-name">Valorant</h3>
+                <p class="staff-role">Competitive Team</p>
+                <p class="staff-bio">Dominating the tactical shooter scene with strategic precision and mechanical excellence.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="glass-card">
+                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="staff-name">League of Legends</h3>
+                <p class="staff-role">Championship Team</p>
+                <p class="staff-bio">Mastering the rift with innovative strategies and world-class teamwork.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="glass-card">
+                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3 class="staff-name">CS:GO 2</h3>
+                <p class="staff-role">Elite Squad</p>
+                <p class="staff-bio">Precision aiming and tactical mastery in the ultimate first-person shooter.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
+    <!-- Organization Stats -->
+    <section class="section">
+        <h2 class="section-title">By The Numbers</h2>
+        <div class="analytics-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Prize Money</div>
+                <div class="stat-value">$2.5M+</div>
+                <div class="stat-change positive">↑ 15% this year</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Global Followers</div>
+                <div class="stat-value">1.2M+</div>
+                <div class="stat-change positive">↑ 25% growth</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tournament Wins</div>
+                <div class="stat-value">47</div>
+                <div class="stat-change positive">↑ 8 this quarter</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Team Members</div>
+                <div class="stat-value">24</div>
+                <div class="stat-change positive">↑ 6 new signings</div>
+            </div>
+        </div>
+    </section>
 
-<h2>About Us</h2>
+    <!-- Recent Achievements -->
+    <section class="section">
+        <h2 class="section-title">Recent Victories</h2>
+        <div class="grid grid-2">
+            <div class="glass-card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-trophy" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent-purple); font-size: 1.3rem; margin-bottom: 0.3rem;">Regional Championship</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Valorant Masters • March 2026</p>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Our Valorant team secured first place in the Regional Championship, qualifying for the international finals with a flawless 3-0 victory in the grand final.</p>
+            </div>
+            <div class="glass-card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-medal" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent-purple); font-size: 1.3rem; margin-bottom: 0.3rem;">League Finals</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">LCS Spring Split • February 2026</p>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Secured second place in the LCS Spring Split, demonstrating exceptional teamwork and strategic innovation throughout the tournament.</p>
+            </div>
+        </div>
+    </section>
 
-<p>
-Void Esports is a competitive gaming organization focused on building talented teams,
-creating engaging content, and growing a strong esports community.
-</p>
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="glass-card" style="text-align: center; background: rgba(109, 40, 217, 0.1);">
+            <h2 class="section-title">Join The Void</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Be part of something extraordinary. Whether you're an investor, sponsor, or fan, Void Esports offers unparalleled opportunities in the world of competitive gaming.
+            </p>
+            <div class="hero-buttons">
+                <a href="investors.html" class="neon-button">Investment Opportunities</a>
+                <a href="sponsors.html" class="neon-button">Partnership Details</a>
+                <a href="staff.html" class="neon-button">Meet The Team</a>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- Footer -->
+    <footer style="background: var(--darker-bg); border-top: 1px solid var(--glass-border); padding: 3rem 2rem 2rem; margin-top: 5rem;">
+        <div class="nav-container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="color: var(--accent-purple); margin-bottom: 1rem;">Void Esports</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">Professional esports organization competing at the highest level across multiple gaming titles.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Home</a></li>
+                        <li><a href="staff.html" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Staff</a></li>
+                        <li><a href="investors.html" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Investors</a></li>
+                        <li><a href="sponsors.html" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Sponsors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Connect</h4>
+                    <div class="social-links" style="justify-content: flex-start;">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--glass-border); color: var(--text-secondary);">
+                <p>&copy; 2026 Void Esports. All rights reserved. | Designed with <span style="color: var(--accent-purple);">♥</span> for gamers</p>
+            </div>
+        </div>
+    </footer>
 
-<section class="section">
-
-<h2>Our Divisions</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Valorant</h3>
-<p>Competitive roster competing in ranked and tournaments.</p>
-</div>
-
-<div class="card">
-<h3>Fortnite</h3>
-<p>High level players competing in cash cups and events.</p>
-</div>
-
-<div class="card">
-<h3>Content</h3>
-<p>Creators producing TikTok and social content.</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-Void Esports © 2026
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
