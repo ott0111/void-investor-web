@@ -21,23 +21,23 @@
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #6d28d9, #a855f7);
     
-    /* Spacing (Reduced) */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
+    /* Spacing (Normal) */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
     
-    /* Font Sizes (Reduced) */
-    --font-xs: 0.75rem;
-    --font-sm: 0.875rem;
-    --font-base: 1rem;
-    --font-lg: 1.125rem;
-    --font-xl: 1.25rem;
-    --font-2xl: 1.5rem;
-    --font-3xl: 1.875rem;
-    --font-4xl: 2.25rem;
-    --font-5xl: 2.5rem;
+    /* Font Sizes (Normal) */
+    --font-xs: 0.875rem;
+    --font-sm: 1rem;
+    --font-base: 1.125rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.5rem;
+    --font-2xl: 1.875rem;
+    --font-3xl: 2.25rem;
+    --font-4xl: 3rem;
+    --font-5xl: 3.75rem;
     
     /* Border Radius */
     --radius-sm: 6px;
@@ -107,7 +107,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 80px;
 }
 
 .logo {
@@ -124,7 +124,7 @@ body {
 }
 
 .logo img {
-    height: 30px;
+    height: 40px;
     width: auto;
 }
 
@@ -216,7 +216,7 @@ body {
     backdrop-filter: blur(15px);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
+    padding: 2rem;
     box-shadow: var(--glass-shadow);
     transition: all var(--transition-normal);
 }
@@ -230,7 +230,7 @@ body {
 /* Buttons */
 .neon-button {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    padding: 0.8rem 2rem;
     background: var(--gradient-primary);
     color: white;
     text-decoration: none;
@@ -241,7 +241,7 @@ body {
     transition: all var(--transition-normal);
     border: none;
     cursor: pointer;
-    font-size: var(--font-sm);
+    font-size: var(--font-base);
 }
 
 .neon-button:hover {
@@ -252,7 +252,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 50vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -307,14 +307,14 @@ body {
 }
 
 .staff-avatar {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     margin: 0 auto var(--spacing-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: white;
 }
 
@@ -347,14 +347,14 @@ body {
 }
 
 .creator-avatar {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin: 0 auto var(--spacing-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
 }
 
