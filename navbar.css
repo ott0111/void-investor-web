@@ -1,0 +1,346 @@
+/* Void Esports - Navigation Styles */
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    transition: all var(--transition-normal);
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: var(--font-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-normal);
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    transition: transform var(--transition-normal);
+}
+
+.logo:hover {
+    color: var(--accent-purple);
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--font-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.nav-link.active {
+    color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.15);
+}
+
+.nav-link.active::before {
+    width: 80%;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-size: var(--font-lg);
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--glass-bg);
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: var(--spacing-xl) 0;
+        gap: var(--spacing-md);
+        transition: left var(--transition-normal);
+        border-top: 1px solid var(--glass-border);
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        font-size: var(--font-lg);
+        padding: 1rem 2rem;
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .nav-link::before {
+        bottom: -2px;
+    }
+    
+    .nav-link:hover::before {
+        width: 60%;
+    }
+    
+    .nav-link.active::before {
+        width: 60%;
+    }
+}
+
+/* Navigation Animation */
+.navbar {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Logo Animation */
+.logo {
+    animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Navigation Links Animation */
+.nav-links {
+    animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-toggle {
+    animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hover Effects */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    border-radius: 50%;
+}
+
+.nav-link:hover::after {
+    width: 100px;
+    height: 100px;
+}
+
+/* Active State Animation */
+.nav-link.active {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
+    }
+}
+
+/* Mobile Menu Close Button */
+.nav-links.active::before {
+    content: '✕';
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: var(--font-2xl);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-normal);
+}
+
+.nav-links.active::before:hover {
+    color: var(--accent-purple);
+}
+
+/* Scroll-based Navigation Changes */
+.navbar.scrolled .nav-link {
+    font-size: var(--font-xs);
+    padding: 0.4rem 0.8rem;
+}
+
+.navbar.scrolled .logo {
+    font-size: var(--font-base);
+}
+
+.navbar.scrolled .logo img {
+    height: 35px;
+}
+
+/* Mobile Menu Overlay */
+.nav-links.active::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Focus States for Accessibility */
+.nav-link:focus,
+.mobile-menu-toggle:focus {
+    outline: 2px solid var(--accent-purple);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .navbar {
+        background: rgba(0, 0, 0, 0.95);
+        border-bottom: 2px solid var(--accent-purple);
+    }
+    
+    .nav-link {
+        color: var(--text-primary);
+        border: 1px solid transparent;
+    }
+    
+    .nav-link:hover {
+        border-color: var(--accent-purple);
+        background: rgba(168, 85, 247, 0.2);
+    }
+}
