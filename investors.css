@@ -1,0 +1,335 @@
+/* Void Esports - Investors Page Specific Styles */
+
+/* Investors Page Hero */
+.investors-hero {
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(168, 85, 247, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.investors-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(168, 85, 247, 0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+}
+
+/* Partnership Tiers Section */
+.partnership-tiers {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+}
+
+.partnership-tiers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+}
+
+/* Sponsor Tier Enhanced Styles */
+.sponsor-tier {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.sponsor-tier::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.1), transparent);
+    transition: left var(--transition-slow);
+}
+
+.sponsor-tier:hover::before {
+    left: 100%;
+}
+
+.sponsor-tier.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--accent-purple);
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.3);
+}
+
+.sponsor-tier.featured::after {
+    content: 'RECOMMENDED';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 0.3rem 3rem;
+    font-size: var(--font-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Tier Pricing Styles */
+.tier-price {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-price::before {
+    content: '$';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    font-size: var(--font-xl);
+    color: var(--accent-purple);
+    font-weight: 400;
+}
+
+/* Tier Features Enhanced */
+.tier-features {
+    position: relative;
+}
+
+.tier-feature {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-normal);
+}
+
+.tier-feature::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-purple);
+    font-weight: 700;
+    font-size: var(--font-lg);
+    transition: all var(--transition-normal);
+}
+
+.sponsor-tier:hover .tier-feature::before {
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(180deg, transparent, rgba(109, 40, 217, 0.05), transparent);
+    padding: var(--spacing-xl) 0;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-value {
+    position: relative;
+    display: inline-block;
+}
+
+.stat-value::after {
+    content: '+';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    color: var(--accent-purple);
+    font-weight: 700;
+}
+
+/* Call to Action Section */
+.investor-cta {
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.investor-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+    animation: investorPulse 4s ease-in-out infinite;
+}
+
+@keyframes investorPulse {
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Investors Page Specific Animations */
+.sponsor-tier {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: investorFadeInUp 0.6s ease-out forwards;
+}
+
+.sponsor-tier:nth-child(1) { animation-delay: 0.1s; }
+.sponsor-tier:nth-child(2) { animation-delay: 0.2s; }
+.sponsor-tier:nth-child(3) { animation-delay: 0.3s; }
+
+.stat-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: investorFadeInUp 0.6s ease-out forwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.4s; }
+.stat-card:nth-child(2) { animation-delay: 0.5s; }
+.stat-card:nth-child(3) { animation-delay: 0.6s; }
+.stat-card:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes investorFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Investors Page Typography */
+.investors-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing-md);
+}
+
+.investors-subtitle {
+    font-size: var(--font-xl);
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Partnership Benefits */
+.benefit-highlight {
+    background: rgba(168, 85, 247, 0.1);
+    border-left: 4px solid var(--accent-purple);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border-radius: var(--radius-sm);
+}
+
+.benefit-highlight h4 {
+    color: var(--accent-purple);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Investors Page Footer */
+.investors-footer {
+    background: linear-gradient(180deg, transparent, rgba(109, 40, 217, 0.1));
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Responsive Investors Page */
+@media (max-width: 768px) {
+    .sponsor-tier.featured {
+        transform: scale(1);
+        margin: var(--spacing-lg) 0;
+    }
+    
+    .sponsor-tier.featured::after {
+        top: 10px;
+        right: -25px;
+        padding: 0.2rem 2rem;
+    }
+    
+    .tier-price::before {
+        top: 5px;
+        left: -15px;
+        font-size: var(--font-lg);
+    }
+    
+    .stat-card {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Investors Page Loading Animation */
+.investor-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.investor-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+    animation: investorLoading 1.5s infinite;
+}
+
+@keyframes investorLoading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Investors Page Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .sponsor-tier,
+    .stat-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .investor-cta::before {
+        animation: none;
+    }
+}
