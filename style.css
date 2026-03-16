@@ -1,4 +1,34 @@
-/* Void Esports - Premium Million Dollar UI - Ultra Premium Edition */
+/* Void Esports - Premium UI - Purple Theme - Accessibility Enhanced */
+
+/* ==========================================================================
+   ACCESSIBILITY - REDUCED MOTION SUPPORT
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .glass-card {
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .btn {
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .staff-card {
+        transform: none !important;
+        transition: none !important;
+    }
+}
 
 /* ==========================================================================
    CSS CUSTOM PROPERTIES (VARIABLES)
@@ -6,9 +36,9 @@
 
 :root {
     /* Premium Color Palette */
-    --accent-gold: #fbbf24;
-    --accent-gold-light: #fde68a;
-    --accent-gold-dark: #f59e0b;
+    --accent-gold: #8b5cf6;
+    --accent-gold-light: #a78bfa;
+    --accent-gold-dark: #7c3aed;
     --accent-purple: #8b5cf6;
     --accent-purple-light: #a78bfa;
     --accent-purple-dark: #7c3aed;
@@ -36,23 +66,27 @@
     /* Premium Glass Effects */
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-bg-hover: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(251, 191, 36, 0.3);
-    --glass-border-hover: rgba(251, 191, 36, 0.5);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    --glass-shadow-hover: 0 16px 64px rgba(0, 0, 0, 0.6);
-    --glass-glow: 0 0 20px rgba(251, 191, 36, 0.2);
-    --glass-glow-hover: 0 0 40px rgba(251, 191, 36, 0.4);
+    --glass-border: rgba(139, 92, 246, 0.2);
+    --glass-border-hover: rgba(139, 92, 246, 0.3);
+    --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --glass-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --glass-glow: 0 0 10px rgba(139, 92, 246, 0.1);
+    --glass-glow-hover: 0 0 20px rgba(139, 92, 246, 0.2);
     
     /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, #fbbf24, #8b5cf6);
-    --gradient-secondary: linear-gradient(135deg, #6d28d9, #3b82f6);
-    --gradient-gold: linear-gradient(135deg, #fbbf24, #f59e0b);
-    --gradient-purple: linear-gradient(135deg, #8b5cf6, #7c3aed);
-    --gradient-blue: linear-gradient(135deg, #3b82f6, #2563eb);
-    --gradient-pink: linear-gradient(135deg, #ec4899, #db2777);
+    --gradient-primary: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    --gradient-secondary: linear-gradient(135deg, #a78bfa, #8b5cf6);
+    --gradient-accent: linear-gradient(135deg, #7c3aed, #6d28d9);
+    --gradient-gold: linear-gradient(135deg, #8b5cf6, #a78bfa, #7c3aed);
+    --gradient-hero: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.1));
+    --gradient-card: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(124, 58, 237, 0.05));
     --gradient-cyan: linear-gradient(135deg, #06b6d4, #0891b2);
     --gradient-dark: linear-gradient(135deg, #1f2937, #111827);
-    --gradient-rainbow: linear-gradient(135deg, #fbbf24, #f59e0b, #8b5cf6, #3b82f6, #ec4899);
+    --gradient-rainbow: linear-gradient(135deg, #8b5cf6, #a78bfa, #7c3aed, #6d28d9, #ec4899);
+    
+    /* Accessibility - Reduced Motion */
+    --animation-duration: 0.3s;
+    --transition-speed: 0.2s;
     
     /* Premium Spacing System */
     --spacing-xs: 0.25rem;
@@ -3071,6 +3105,7 @@ footer::before {
     background: var(--glass-bg);
     border-radius: var(--radius-full);
     outline: none;
+    appearance: none;
     -webkit-appearance: none;
     border: 1px solid var(--glass-border);
 }
@@ -4370,6 +4405,187 @@ footer {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* ==========================================================================
+   PREMIUM STAFF CARDS
+   ========================================================================== */
+
+.staff-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    max-width: 280px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.staff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.staff-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--glass-shadow-hover);
+    border-color: var(--glass-border-hover);
+}
+
+.staff-card:hover::before {
+    opacity: 1;
+}
+
+.staff-avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 2rem;
+    font-weight: var(--font-bold);
+    color: white;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.staff-avatar::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    opacity: 0;
+}
+
+.staff-card:hover .staff-avatar::after {
+    animation: shimmer 0.6s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.staff-name {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.staff-role {
+    font-size: var(--font-base);
+    color: var(--accent-purple);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.staff-bio {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.staff-social {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.staff-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: var(--font-sm);
+}
+
+.staff-social-link:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Staff Grid Layout */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
+}
+
+/* Staff Hierarchy - Top Tier */
+.staff-card.top-tier {
+    border-color: var(--accent-purple);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.05));
+}
+
+.staff-card.top-tier .staff-avatar {
+    background: var(--gradient-primary);
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+}
+
+.staff-card.top-tier .staff-name {
+    color: var(--accent-purple);
+    text-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+/* Staff Hierarchy - Mid Tier */
+.staff-card.mid-tier {
+    border-color: var(--accent-blue);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+}
+
+.staff-card.mid-tier .staff-avatar {
+    background: var(--gradient-cyan);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.staff-card.mid-tier .staff-role {
+    color: var(--accent-blue);
 }
 
 /* Responsive Design */
