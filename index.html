@@ -1,137 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Void Esports | Investors & Sponsors</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0a0a0a;color:#fff}
-header{padding:60px 20px;text-align:center;background:#000}
-header h1{font-size:46px;margin:0}
-header p{color:#aaa;margin-top:10px}
-section{padding:70px 20px;max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.card{background:#111;padding:25px;border-radius:14px;box-shadow:0 0 15px rgba(0,0,0,.5)}
-.card h3{margin-top:0}
-.stats{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
-.stat{background:#111;padding:20px;border-radius:10px;text-align:center;min-width:150px}
-button{background:#6c5cff;border:none;padding:14px 24px;border-radius:8px;color:white;font-size:16px;cursor:pointer}
-button:hover{opacity:.9}
-.chart-container{max-width:900px;margin:auto}
-.req-box{background:#111;padding:30px;border-radius:14px;text-align:center}
-footer{text-align:center;padding:40px;color:#777}
-</style>
+<title>Void Esports</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-<h1>Void Esports</h1>
-<p>Sponsorship & Investor Opportunities</p>
+<img src="assets/logo.png">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="staff.html">Staff</a>
+<a href="investors.html">Investors</a>
+<a href="sponsors.html">Sponsors</a>
+</nav>
 </header>
 
-<section>
-<h2>About Void Esports</h2>
-<p style="text-align:center;max-width:800px;margin:auto;line-height:1.6;color:#ccc">
-Void Esports is a competitive gaming organization focused on building high level talent, strong communities, and engaging gaming content. Our organization operates competitive teams, content creators, and a rapidly growing online community. Our goal is to compete at a high level while growing a recognizable brand within the esports space.
+<div class="hero">
+<h1>Void Esports</h1>
+<p>Competitive Gaming • Content • Community</p>
+</div>
+
+<section class="section">
+
+<h2>About Us</h2>
+
+<p>
+Void Esports is a competitive gaming organization focused on building talented teams,
+creating engaging content, and growing a strong esports community.
 </p>
+
 </section>
 
-<section>
-<h2>What We Bring to Investors</h2>
+<section class="section">
+
+<h2>Our Divisions</h2>
+
 <div class="cards">
 
 <div class="card">
-<h3>Growing Brand</h3>
-<p>Void Esports is building a recognizable brand through competitive play, social media content, and community engagement.</p>
+<h3>Valorant</h3>
+<p>Competitive roster competing in ranked and tournaments.</p>
 </div>
 
 <div class="card">
-<h3>Content Exposure</h3>
-<p>Our creators produce gaming content across platforms like TikTok and other social media platforms, allowing partner brands to reach an engaged gaming audience.</p>
+<h3>Fortnite</h3>
+<p>High level players competing in cash cups and events.</p>
 </div>
 
 <div class="card">
-<h3>Competitive Presence</h3>
-<p>Our teams compete in ranked play, tournaments, and competitive ladders across multiple esports titles.</p>
-</div>
-
-<div class="card">
-<h3>Community Reach</h3>
-<p>Our Discord servers and social media channels allow us to directly engage with our growing community.</p>
+<h3>Content</h3>
+<p>Creators producing TikTok and social content.</p>
 </div>
 
 </div>
-</section>
 
-<section>
-<h2>Organization Stats</h2>
-<div class="stats">
-<div class="stat"><h3>Players</h3><p>20+</p></div>
-<div class="stat"><h3>Staff</h3><p>15+</p></div>
-<div class="stat"><h3>Community Members</h3><p>1,000+</p></div>
-<div class="stat"><h3>Games</h3><p>Valorant • Fortnite</p></div>
-</div>
-</section>
-
-<section>
-<h2>Social Media Growth</h2>
-<div class="chart-container">
-<canvas id="growthChart"></canvas>
-</div>
-</section>
-
-<section>
-<h2>Sponsorship Opportunities</h2>
-<div class="req-box">
-<p style="color:#ccc;max-width:700px;margin:auto;line-height:1.6">
-Void Esports is currently looking for a <b>paid sponsorship partner</b> to support the continued growth of our competitive teams, content creators, and community initiatives. Sponsors will receive brand exposure through our competitive teams, social media platforms, and community events.
-</p>
-
-<br>
-
-<p style="color:#aaa">Interested in sponsoring or investing in Void Esports?</p>
-
-<br>
-
-<button onclick="contact()">Contact Us</button>
-</div>
 </section>
 
 <footer>
-<p>Void Esports © 2026</p>
+Void Esports © 2026
 </footer>
-
-<script>
-const ctx = document.getElementById('growthChart');
-
-new Chart(ctx, {
- type: 'line',
- data: {
- labels: ['Jan','Feb','Mar','Apr','May','Jun'],
- datasets: [{
- label: 'Social Media Followers',
- data: [200, 350, 500, 800, 1200, 1700],
- borderWidth: 3,
- tension: 0.3
- }]
- },
- options: {
- plugins:{
- legend:{labels:{color:'white'}}
- },
- scales:{
- x:{ticks:{color:'white'}},
- y:{ticks:{color:'white'}}
- }
- }
-});
-
-function contact(){
-alert('Contact Void Esports through Discord to discuss sponsorship or investment opportunities.');
-}
-</script>
 
 </body>
 </html>
