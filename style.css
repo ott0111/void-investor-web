@@ -1,608 +1,1796 @@
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Void Esports Leadership Team - Meet the minds behind our competitive success">
-    <meta name="keywords" content="void esports staff, esports team, leadership, management">
-    <meta name="theme-color" content="#6d28d9">
-    <title>Staff - Void Esports</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+/* Void Esports - Premium CSS Framework */
+/* Ultra Modern Esports Organization Styling */
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo(2).png" alt="Void Esports" onerror="this.style.display='none'">
-                <span>VOID ESPORTS</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="staff.html" class="nav-link active">Staff</a></li>
-                <li><a href="investors.html" class="nav-link">Investors</a></li>
-                <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+/* CSS Variables */
+:root {
+  /* Primary Colors */
+  --primary-purple: #6d28d9;
+  --primary-purple-dark: #5b21b6;
+  --primary-purple-light: #8b5cf6;
+  --accent-purple: #a855f7;
+  --accent-purple-light: #c084fc;
+  --accent-purple-lighter: #e9d5ff;
+  --neon-purple: #9333ea;
+  --neon-pink: #ec4899;
+  --neon-blue: #3b82f6;
+  
+  /* Secondary Colors */
+  --secondary-blue: #3b82f6;
+  --secondary-blue-dark: #2563eb;
+  --secondary-blue-light: #60a5fa;
+  
+  /* Dark Theme Colors */
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #262626;
+  --darker-bg: #0a0a0a;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-dim: #52525b;
+  
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-bg-strong: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(168, 85, 247, 0.1);
+  --glass-shadow-hover: 0 12px 48px rgba(168, 85, 247, 0.2);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6d28d9, #a855f7);
+  --gradient-secondary: linear-gradient(135deg, #3b82f6, #60a5fa);
+  --gradient-accent: linear-gradient(135deg, #a855f7, #c084fc);
+  --gradient-hero: linear-gradient(135deg, #0f0f0f, #1a1a1a, #262626);
+  --gradient-neon: linear-gradient(135deg, #9333ea, #ec4899, #3b82f6);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  --gradient-animated: linear-gradient(270deg, #6d28d9, #a855f7, #ec4899, #6d28d9);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-neon: 0 0 20px rgba(168, 85, 247, 0.5);
+  --shadow-neon-hover: 0 0 30px rgba(168, 85, 247, 0.8);
+  --shadow-neon-pink: 0 0 25px rgba(236, 72, 153, 0.6);
+  --shadow-neon-blue: 0 0 25px rgba(59, 130, 246, 0.6);
+  --shadow-glass: 0 8px 32px rgba(168, 85, 247, 0.15);
+  --shadow-glass-hover: 0 16px 64px rgba(168, 85, 247, 0.25);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  
+  /* Performance Optimizations */
+  --will-change-auto: auto;
+  --will-change-transform: transform;
+  --transform-gpu: translateZ(0);
+  
+  /* Enhanced Color Palette */
+  --success-green: #10b981;
+  --warning-yellow: #f59e0b;
+  --error-red: #ef4444;
+  --info-cyan: #06b6d4;
+}
 
-    <!-- Hero Section -->
-    <section class="hero" style="min-height: 60vh;">
-        <canvas id="particles-canvas"></canvas>
-        <div class="hero-content fade-in">
-            <h1 class="hero-title">OUR TEAM</h1>
-            <p class="hero-subtitle">The Leadership Behind Victory</p>
-        </div>
-    </section>
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <!-- Owners Section -->
-    <section class="section">
-        <h2 class="section-title">Owners</h2>
-        <div class="grid grid-2">
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <h3 class="staff-name">Frank</h3>
-                <div class="staff-role">Owner</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Founder</span>
-                    <span class="role-tag">Vision</span>
-                </div>
-                <p class="staff-bio">Founder and visionary behind Void Esports, driving the organization's strategic direction and long-term growth.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <h3 class="staff-name">Noxxa</h3>
-                <div class="staff-role">Owner</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Co-Founder</span>
-                    <span class="role-tag">Operations</span>
-                </div>
-                <p class="staff-bio">Co-founder focused on operational excellence and team development, ensuring competitive success across all divisions.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
 
-    <!-- Executive Leadership Section -->
-    <section class="section">
-        <h2 class="section-title">Executive Leadership</h2>
-        <div class="grid grid-3">
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h3 class="staff-name">Jah</h3>
-                <div class="staff-role">CEO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Strategy</span>
-                </div>
-                <p class="staff-bio">Chief Executive Officer leading the organization's vision and strategic initiatives in the competitive esports landscape.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3 class="staff-name">Mystxc</h3>
-                <div class="staff-role">CVO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Innovation</span>
-                </div>
-                <p class="staff-bio">Chief Visionary Officer driving innovation and creative direction across all organizational initiatives.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3 class="staff-name">Alex</h3>
-                <div class="staff-role">CTO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Technology</span>
-                </div>
-                <p class="staff-bio">Chief Technology Officer overseeing all technical infrastructure and digital transformation initiatives.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3 class="staff-name">Layne</h3>
-                <div class="staff-role">CTO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Development</span>
-                </div>
-                <p class="staff-bio">Chief Technology Officer focused on software development and technical innovation for competitive advantage.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="staff-name">Spar</h3>
-                <div class="staff-role">CSO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Security</span>
-                </div>
-                <p class="staff-bio">Chief Security Officer ensuring organizational security and competitive integrity across all operations.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3 class="staff-name">Stealth</h3>
-                <div class="staff-role">CDO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Design</span>
-                </div>
-                <p class="staff-bio">Chief Design Officer leading creative direction and brand development across all organizational touchpoints.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="staff-name">Chase</h3>
-                <div class="staff-role">CAO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Analytics</span>
-                </div>
-                <p class="staff-bio">Chief Analytics Officer driving data-driven decision making and performance optimization across the organization.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <h3 class="staff-name">Ricky</h3>
-                <div class="staff-role">CCO / CNO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Community</span>
-                </div>
-                <p class="staff-bio">Chief Community & Content Officer overseeing community engagement and content strategy across all platforms.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <h3 class="staff-name">Prime</h3>
-                <div class="staff-role">CCO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Communications</span>
-                </div>
-                <p class="staff-bio">Chief Communications Officer managing internal and external communications for organizational alignment.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="staff-name">Slyhus</h3>
-                <div class="staff-role">CSO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Strategy</span>
-                </div>
-                <p class="staff-bio">Chief Strategy Officer developing long-term strategic initiatives and competitive positioning frameworks.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <h3 class="staff-name">Trapped</h3>
-                <div class="staff-role">CFO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Finance</span>
-                </div>
-                <p class="staff-bio">Chief Financial Officer managing financial strategy, budgeting, and investment opportunities for sustainable growth.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3 class="staff-name">Zyrox</h3>
-                <div class="staff-role">COO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Operations</span>
-                </div>
-                <p class="staff-bio">Chief Operating Officer optimizing operational efficiency and ensuring seamless execution of organizational objectives.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
 
-    <!-- Operations Section -->
-    <section class="section">
-        <h2 class="section-title">Operations</h2>
-        <div class="grid grid-2">
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3 class="staff-name">Spazzic</h3>
-                <div class="staff-role">Team Director</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Operations</span>
-                    <span class="role-tag">Management</span>
-                </div>
-                <p class="staff-bio">Team Director overseeing team operations, player development, and competitive performance across all divisions.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
 
-    <!-- Department Leads Section -->
-    <section class="section">
-        <h2 class="section-title">Department Leads</h2>
-        <div class="grid grid-3">
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3 class="staff-name">Yeezy</h3>
-                <div class="staff-role">HR Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">HR</span>
-                    <span class="role-tag">People</span>
-                </div>
-                <p class="staff-bio">Human Resources Lead managing talent acquisition, team culture, and organizational development initiatives.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-video"></i>
-                </div>
-                <h3 class="staff-name">SF</h3>
-                <div class="staff-role">VFX Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Creative</span>
-                    <span class="role-tag">VFX</span>
-                </div>
-                <p class="staff-bio">Visual Effects Lead overseeing all visual effects production and post-production for content creation.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-gamepad"></i>
-                </div>
-                <h3 class="staff-name">KSN</h3>
-                <div class="staff-role">RL Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Gaming</span>
-                    <span class="role-tag">Rocket League</span>
-                </div>
-                <p class="staff-bio">Rocket League Lead managing competitive strategy, player development, and tournament participation.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3 class="staff-name">Starz</h3>
-                <div class="staff-role">Creative Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Creative</span>
-                    <span class="role-tag">Design</span>
-                </div>
-                <p class="staff-bio">Creative Lead directing visual content creation, brand aesthetics, and creative project execution.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3 class="staff-name">Slax</h3>
-                <div class="staff-role">Creative Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Creative</span>
-                    <span class="role-tag">Art</span>
-                </div>
-                <p class="staff-bio">Creative Lead overseeing artistic direction, visual storytelling, and brand creative development.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-image"></i>
-                </div>
-                <h3 class="staff-name">Winter</h3>
-                <div class="staff-role">GFX Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Creative</span>
-                    <span class="role-tag">Graphics</span>
-                </div>
-                <p class="staff-bio">Graphics Lead managing all graphic design production, visual assets, and brand material creation.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gradient-primary);
+  z-index: var(--z-fixed);
+  transition: width 0.1s ease;
+  box-shadow: var(--shadow-neon);
+}
 
-    <!-- Tech Department Section -->
-    <section class="section">
-        <h2 class="section-title">Tech Department</h2>
-        <div class="glass-card" style="background: rgba(109, 40, 217, 0.1); margin-bottom: 3rem;">
-            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
-                The following team members built the Void Esports web infrastructure and technical systems that power our organization. 
-                Their expertise in web development, system architecture, and digital innovation has created the foundation for our competitive success.
-            </p>
-        </div>
-        <div class="grid grid-3">
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3 class="staff-name">Yeezy</h3>
-                <div class="staff-role">Tech Lead</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Development</span>
-                    <span class="role-tag">HR Systems</span>
-                </div>
-                <p class="staff-bio">Technical lead for web infrastructure and HR systems development, ensuring robust technical foundations.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3 class="staff-name">Alex</h3>
-                <div class="staff-role">CTO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Technology</span>
-                </div>
-                <p class="staff-bio">Chief Technology Officer overseeing all technical infrastructure and digital transformation initiatives.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-server"></i>
-                </div>
-                <h3 class="staff-name">Layne</h3>
-                <div class="staff-role">CTO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Backend</span>
-                </div>
-                <p class="staff-bio">Chief Technology Officer focused on backend systems and software architecture for organizational success.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="staff-name">Slyhus</h3>
-                <div class="staff-role">CSO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">Security</span>
-                </div>
-                <p class="staff-bio">Chief Security Officer ensuring technical security and system integrity across all digital infrastructure.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #9333ea, #c084fc);">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3 class="staff-name">Stealth</h3>
-                <div class="staff-role">CDO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">UI/UX</span>
-                </div>
-                <p class="staff-bio">Chief Design Officer leading UI/UX design and digital experience across all web platforms.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #a855f7, #e9d5ff);">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <h3 class="staff-name">Trapped</h3>
-                <div class="staff-role">CFO</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Executive</span>
-                    <span class="role-tag">FinTech</span>
-                </div>
-                <p class="staff-bio">Chief Financial Officer managing financial systems and payment infrastructure for digital operations.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="glass-card staff-card">
-                <div class="staff-avatar" style="background: linear-gradient(135deg, #6d28d9, #a855f7);">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3 class="staff-name">Nick</h3>
-                <div class="staff-role">Tech Developer</div>
-                <div class="staff-tags">
-                    <span class="role-tag">Development</span>
-                    <span class="role-tag">Database</span>
-                </div>
-                <p class="staff-bio">Senior Developer specializing in database architecture and system optimization for high-performance operations.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: all var(--transition-normal);
+}
 
-    <!-- Organization Stats -->
-    <section class="section">
-        <h2 class="section-title">By The Numbers</h2>
-        <div class="analytics-grid">
-            <div class="stat-card">
-                <div class="stat-label">Total Staff</div>
-                <div class="stat-value">68</div>
-                <div class="stat-change positive">Elite Team Members</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Executive Team</div>
-                <div class="stat-value">14</div>
-                <div class="stat-change positive">C-Level Leadership</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Department Leads</div>
-                <div class="stat-value">6</div>
-                <div class="stat-change positive">Specialized Directors</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Tech Department</div>
-                <div class="stat-value">7</div>
-                <div class="stat-change positive">Web & Systems</div>
-            </div>
-        </div>
-    </section>
+.navbar.scrolled {
+  background: rgba(15, 15, 15, 0.95);
+  box-shadow: var(--shadow-lg);
+}
 
-    <!-- Footer -->
-    <footer>
-        <div class="nav-container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div>
-                    <h3 style="color: var(--accent-purple); margin-bottom: 1rem;">Void Esports</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">Professional esports organization with world-class leadership and technical expertise.</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Team</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="staff.html#owners" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Owners</a></li>
-                        <li><a href="staff.html#executive" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Executive Leadership</a></li>
-                        <li><a href="staff.html#operations" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Operations</a></li>
-                        <li><a href="staff.html#tech" style="color: var(--text-secondary); text-decoration: none; display: block; padding: 0.3rem 0;">Tech Department</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Connect</h4>
-                    <div class="social-links">
-                        <a href="https://discord.gg/xJb8MXrf" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a href="https://www.tiktok.com/@voidesportsggs?_r=1&_t=ZT-92a7CN4YVqg" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://youtube.com/@voidesports2x?si=PbRzUj_o9Q178kIj" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://x.com/voidesports2x?s=21" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/voidesports2x?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--glass-border); color: var(--text-secondary);">
-                <p>&copy; 2024 Void Esports. All rights reserved. | Leadership Team</p>
-            </div>
-        </div>
-    </footer>
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
 
-    <!-- Scripts -->
-    <script src="particles.js"></script>
-    <script src="premium-new.js"></script>
-</body>
-</html>
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: all var(--transition-normal);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  transition: all var(--transition-normal);
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--glass-bg-hover);
+}
+
+.nav-link.active {
+  color: var(--accent-purple);
+}
+
+.nav-link.active::before {
+  width: 80%;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--glass-bg-hover);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--gradient-hero);
+  overflow: hidden;
+}
+
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 var(--spacing-md);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: var(--spacing-md);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scroll-arrow {
+  width: 30px;
+  height: 30px;
+  border-right: 2px solid var(--accent-purple);
+  border-bottom: 2px solid var(--accent-purple);
+  transform: rotate(45deg);
+  animation: bounce 2s infinite;
+}
+
+/* Buttons */
+.neon-button {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--glass-bg);
+  border: 2px solid var(--accent-purple);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left var(--transition-normal);
+  z-index: -1;
+}
+
+.neon-button:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-purple-light);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-2px);
+}
+
+.neon-button:hover::before {
+  left: 0;
+}
+
+/* Section Styles */
+.section {
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Glass Cards */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  will-change: transform, box-shadow;
+  transform: var(--transform-gpu);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-neon);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--gradient-glass);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glass-hover);
+  will-change: transform, box-shadow;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card:hover::after {
+  opacity: 0.1;
+}
+
+/* Team Cards */
+.team-card {
+  text-align: center;
+  will-change: transform;
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-shadow: var(--shadow-neon);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow;
+}
+
+.team-avatar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: var(--shadow-neon-hover), var(--shadow-neon-pink);
+}
+
+.team-card:hover .team-avatar::before {
+  animation: shine 0.5s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.team-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+  transition: color var(--transition-normal);
+}
+
+.team-card:hover .team-name {
+  background: var(--gradient-animated);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.team-role {
+  color: var(--accent-purple);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color var(--transition-normal);
+}
+
+.team-card:hover .team-role {
+  color: var(--accent-purple-light);
+}
+
+.team-bio {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+/* Sponsor Tiers */
+.sponsor-tier {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsor-tier.featured {
+  border-color: var(--accent-purple);
+  background: rgba(109, 40, 217, 0.1);
+}
+
+.sponsor-tier.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.25rem 3rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.sponsor-tier:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--glass-border-hover);
+}
+
+.tier-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.tier-price {
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-xs);
+}
+
+.tier-period {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tier-features {
+  list-style: none;
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+}
+
+.tier-feature {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tier-feature::before {
+  content: '✓';
+  color: var(--accent-purple);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Staff Cards */
+.staff-card {
+  text-align: center;
+}
+
+.staff-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-shadow: var(--shadow-neon);
+  transition: all var(--transition-normal);
+}
+
+.staff-card:hover .staff-avatar {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.staff-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+}
+
+.staff-role {
+  color: var(--accent-purple);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.1rem;
+}
+
+.staff-tags {
+  display: flex;
+  gap: var(--spacing-xs);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.role-tag {
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--accent-purple);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.role-tag:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.staff-bio {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.social-link:hover {
+  color: var(--accent-purple);
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-2px);
+}
+
+/* Analytics Grid */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-change {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.stat-change.positive {
+  color: #10b981;
+}
+
+.stat-change.negative {
+  color: #ef4444;
+}
+
+/* Achievement Cards */
+.achievement-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* CTA Card */
+.cta-card {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background: var(--darker-bg);
+  border-top: 1px solid var(--glass-border);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+footer h3,
+footer h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+footer a {
+  transition: color var(--transition-normal);
+}
+
+footer a:hover {
+  color: var(--accent-purple);
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+  }
+  to {
+    text-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(168, 85, 247, 0.6);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px) rotate(45deg);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px) rotate(45deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--glass-border);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .neon-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .grid {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .analytics-grid {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-tier.featured {
+    transform: scale(1);
+  }
+
+  .team-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .tier-price {
+    font-size: 2.5rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .glass-card {
+    padding: var(--spacing-md);
+  }
+
+  .role-tags {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .hero-content {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  
+  .glass-card {
+    padding: var(--spacing-md);
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Focus States */
+.neon-button:focus,
+.nav-link:focus,
+.social-link:focus {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .scroll-progress,
+  .hero-buttons,
+  .mobile-menu-toggle {
+    display: none;
+  }
+  
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .glass-card {
+    background: white;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Premium UI Components */
+
+/* Sponsor Tiers */
+.sponsor-tier {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow;
+  transform: var(--transform-gpu);
+}
+
+.sponsor-tier.featured {
+  border-color: var(--accent-purple);
+  background: rgba(168, 85, 247, 0.1);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-neon);
+}
+
+.sponsor-tier.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 5px 40px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transform: rotate(45deg);
+  z-index: 10;
+}
+
+.sponsor-tier:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-glass-hover);
+  border-color: var(--accent-purple);
+}
+
+.tier-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  transition: background var(--transition-normal);
+}
+
+.sponsor-tier:hover .tier-name {
+  background: var(--gradient-animated);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.tier-price {
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  transition: all var(--transition-normal);
+}
+
+.sponsor-tier:hover .tier-price {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+}
+
+.tier-period {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.tier-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.tier-feature {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: color var(--transition-normal);
+}
+
+.sponsor-tier:hover .tier-feature {
+  color: var(--text-primary);
+}
+
+.tier-feature::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-purple);
+  font-weight: bold;
+  transition: color var(--transition-normal);
+}
+
+.sponsor-tier:hover .tier-feature::before {
+  color: var(--accent-purple-light);
+}
+
+/* Enhanced Team Cards */
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-shadow: var(--shadow-neon);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-avatar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: var(--shadow-neon-hover), var(--shadow-neon-pink);
+}
+
+.team-card:hover .team-avatar::before {
+  animation: shine 0.5s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Analytics Cards */
+.stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+  transform: var(--transform-gpu);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-neon);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: var(--shadow-glass-hover);
+  border-color: var(--accent-purple);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card:hover::after {
+  width: 200%;
+  height: 200%;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-animated);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-xs);
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Floating Elements */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Pulse Elements */
+.pulse-element {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Glow Effects */
+.glow-effect {
+  box-shadow: var(--shadow-neon);
+  transition: all var(--transition-normal);
+}
+
+.glow-effect:hover {
+  box-shadow: var(--shadow-neon-hover), var(--shadow-neon-pink);
+}
+
+/* Interactive Background Elements */
+.bg-gradient-animated {
+  background: var(--gradient-animated);
+  background-size: 400% 400%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Enhanced Social Links */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.social-link:hover {
+  color: white;
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-3px) scale(1.1);
+}
+
+.social-link:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Premium Form Elements */
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+  background: var(--glass-bg-hover);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Loading Animation */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--glass-border);
+  border-top: 3px solid var(--accent-purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Role Tags */
+.role-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.role-tag {
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-neon);
+  transition: all var(--transition-normal);
+}
+
+.role-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+/* Modern CSS Improvements & Performance Optimizations */
+
+/* GPU-Accelerated Animations */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Focus Styles for Accessibility */
+.neon-button:focus-visible,
+.social-link:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--glass-border);
+  border-top: 2px solid var(--accent-purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: var(--gradient-animated);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.glow-on-hover:hover {
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Enhanced Mobile Performance */
+@media (max-width: 768px) {
+  .gpu-accelerated {
+    will-change: auto;
+    transform: none;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .sponsor-tier:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+/* Print Optimizations */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .glass-card {
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+  
+  .neon-button {
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .hero,
+  .section {
+    page-break-inside: avoid;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Enhanced Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Intersection Observer Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Form Styling */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.9rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+  background: var(--glass-bg-hover);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Enhanced Button States */
+.neon-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.neon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Enhanced Social Links */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.social-link:hover {
+  color: white;
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-3px) scale(1.1);
+}
+
+.social-link:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Performance Optimizations */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Enhanced Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
