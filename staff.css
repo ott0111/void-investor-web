@@ -1,0 +1,265 @@
+/* Void Esports - Staff Page Specific Styles */
+
+/* Staff Page Hero */
+.staff-hero {
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(168, 85, 247, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.staff-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(168, 85, 247, 0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+/* Executive Leadership Section */
+.executive-leadership {
+    position: relative;
+}
+
+.executive-leadership::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+}
+
+/* Department Leads Section */
+.department-leads {
+    background: linear-gradient(180deg, transparent, rgba(109, 40, 217, 0.05), transparent);
+}
+
+/* Tech Department Section */
+.tech-department {
+    position: relative;
+}
+
+.tech-department .glass-card {
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.tech-department .glass-card:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+/* Staff Card Variations */
+.staff-card.executive {
+    position: relative;
+}
+
+.staff-card.executive::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity var(--transition-normal);
+}
+
+.staff-card.executive:hover::after {
+    opacity: 0.3;
+}
+
+.staff-card.department {
+    border-left: 4px solid var(--accent-purple);
+}
+
+.staff-card.tech {
+    border-bottom: 4px solid var(--accent-violet);
+}
+
+/* Staff Avatar Special Effects */
+.staff-avatar.pulse {
+    animation: avatarPulse 2s infinite;
+}
+
+@keyframes avatarPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(168, 85, 247, 0);
+    }
+}
+
+/* Staff Role Badges */
+.staff-role {
+    position: relative;
+    display: inline-block;
+}
+
+.staff-role::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.staff-card:hover .staff-role::after {
+    transform: scaleX(1);
+}
+
+/* Section Transitions */
+.section {
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+    opacity: 0.2;
+}
+
+/* Staff Page Specific Animations */
+.staff-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: staffFadeInUp 0.6s ease-out forwards;
+}
+
+.staff-card:nth-child(1) { animation-delay: 0.1s; }
+.staff-card:nth-child(2) { animation-delay: 0.2s; }
+.staff-card:nth-child(3) { animation-delay: 0.3s; }
+.staff-card:nth-child(4) { animation-delay: 0.4s; }
+.staff-card:nth-child(5) { animation-delay: 0.5s; }
+.staff-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes staffFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Staff Cards */
+@media (max-width: 768px) {
+    .staff-card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .executive-leadership::before,
+    .section::before {
+        display: none;
+    }
+    
+    .staff-avatar {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Staff Page Loading Animation */
+.staff-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.staff-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+    animation: staffLoading 1.5s infinite;
+}
+
+@keyframes staffLoading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Staff Page Footer */
+.staff-footer {
+    background: linear-gradient(180deg, transparent, rgba(109, 40, 217, 0.1));
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Staff Page Specific Typography */
+.staff-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing-md);
+}
+
+.staff-subtitle {
+    font-size: var(--font-xl);
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Department Section Headers */
+.department-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.department-header h2 {
+    font-size: var(--font-3xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+}
+
+.department-header p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Staff Page Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .staff-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .staff-avatar.pulse {
+        animation: none;
+    }
+}
