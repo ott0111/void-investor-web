@@ -51,24 +51,24 @@
         <h2 class="section-title">Live Analytics Dashboard</h2>
         <div class="analytics-grid">
             <div class="stat-card">
-                <div class="stat-label">Social Media Followers</div>
-                <div class="stat-value" data-analytics="followers">1,247,892+</div>
-                <div class="stat-change positive">↑ 12.5% this month</div>
+                <div class="stat-label">Discord Community</div>
+                <div class="stat-value" data-analytics="followers">17.7K+</div>
+                <div class="stat-change positive">↑ Fastest Growing ORG</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Daily Mentions</div>
-                <div class="stat-value" data-analytics="mentions">3,847</div>
-                <div class="stat-change positive">↑ 8.3% this week</div>
+                <div class="stat-label">TikTok Followers</div>
+                <div class="stat-value" data-analytics="followers">5,918+</div>
+                <div class="stat-change positive">↑ 28.2K Likes</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Engagement Rate</div>
-                <div class="stat-value" data-analytics="engagement">8.7%</div>
-                <div class="stat-change positive">↑ 2.1% improvement</div>
+                <div class="stat-label">YouTube Subscribers</div>
+                <div class="stat-value" data-analytics="followers">Growing</div>
+                <div class="stat-change positive">↑ Active Content</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Brand Value</div>
-                <div class="stat-value">$4.2M</div>
-                <div class="stat-change positive">↑ 18% YoY growth</div>
+                <div class="stat-label">Instagram Followers</div>
+                <div class="stat-value" data-analytics="followers">328+</div>
+                <div class="stat-change positive">↑ 815 Following</div>
             </div>
         </div>
 
@@ -160,7 +160,7 @@
         <div class="grid grid-2">
             <div class="glass-card">
                 <h3 style="color: var(--accent-purple); margin-bottom: 1rem;">Revenue Streams</h3>
-                <div style="space-y: 1rem;">
+                <div>
                     <div style="margin-bottom: 1rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span style="color: var(--text-secondary);">Tournament Winnings</span>
@@ -201,7 +201,7 @@
             </div>
             <div class="glass-card">
                 <h3 style="color: var(--accent-purple); margin-bottom: 1rem;">5-Year Projections</h3>
-                <div style="space-y: 1rem;">
+                <div>
                     <div style="margin-bottom: 1rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span style="color: var(--text-secondary);">Revenue Growth</span>
@@ -410,24 +410,24 @@
         const growthChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                 datasets: [{
-                    label: 'Twitter Followers',
-                    data: [450000, 520000, 580000, 650000, 720000, 780000, 850000, 920000, 980000, 1050000, 1150000, 1247892],
-                    borderColor: '#1DA1F2',
-                    backgroundColor: 'rgba(29, 161, 242, 0.1)',
+                    label: 'TikTok Followers',
+                    data: [1000, 2000, 3500, 4500, 5200, 5918],
+                    borderColor: '#000000',
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
                     tension: 0.4
                 }, {
-                    label: 'Twitch Followers',
-                    data: [180000, 210000, 245000, 280000, 320000, 360000, 400000, 440000, 480000, 520000, 570000, 620000],
-                    borderColor: '#9146FF',
-                    backgroundColor: 'rgba(145, 70, 255, 0.1)',
+                    label: 'Discord Members',
+                    data: [2000, 5000, 8000, 12000, 15000, 17700],
+                    borderColor: '#5865F2',
+                    backgroundColor: 'rgba(88, 101, 242, 0.1)',
                     tension: 0.4
                 }, {
-                    label: 'YouTube Subscribers',
-                    data: [220000, 260000, 300000, 340000, 380000, 420000, 460000, 500000, 540000, 580000, 620000, 670000],
-                    borderColor: '#FF0000',
-                    backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                    label: 'Instagram Followers',
+                    data: [50, 100, 150, 200, 250, 328],
+                    borderColor: '#E4405F',
+                    backgroundColor: 'rgba(228, 64, 95, 0.1)',
                     tension: 0.4
                 }]
             },
