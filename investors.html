@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Void Esports Investors</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="assets/logo.png">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="staff.html">Staff</a>
+<a href="investors.html">Investors</a>
+<a href="sponsors.html">Sponsors</a>
+</nav>
+
+</header>
+
+<section class="section">
+
+<h2>Investor Overview</h2>
+
+<p>
+Void Esports is building a growing esports brand through competitive teams,
+content creation, and community engagement.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Social Media Growth</h2>
+
+<div class="chart">
+
+<canvas id="growthChart"></canvas>
+
+</div>
+
+</section>
+
+<script>
+
+const ctx = document.getElementById('growthChart');
+
+new Chart(ctx, {
+
+type:'line',
+
+data:{
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+datasets:[{
+label:'Followers',
+data:[200,350,500,800,1200,1700],
+borderWidth:3
+}]
+},
+
+options:{
+plugins:{legend:{labels:{color:'white'}}},
+scales:{
+x:{ticks:{color:'white'}},
+y:{ticks:{color:'white'}}
+}
+}
+
+});
+
+</script>
+
+<footer>
+Void Esports © 2026
+</footer>
+
+</body>
+</html>
