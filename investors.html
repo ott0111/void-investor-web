@@ -71,46 +71,6 @@
                 <div class="stat-change positive">↑ 815 Following</div>
             </div>
         </div>
-
-        <!-- Social Media Growth Chart -->
-        <div class="chart-container">
-            <h3 style="margin-bottom: 1.5rem; color: var(--accent-purple);">Social Media Growth Trajectory</h3>
-            <canvas id="growthChart"></canvas>
-        </div>
-
-        <!-- Real-time Metrics -->
-        <div class="grid grid-3">
-            <div class="glass-card">
-                <h4 style="color: var(--accent-purple); margin-bottom: 1rem;">Search Trend Score</h4>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="flex: 1; background: rgba(168, 85, 247, 0.1); border-radius: 10px; padding: 0.5rem;">
-                        <div style="background: var(--gradient-primary); height: 8px; border-radius: 5px; width: 78%;"></div>
-                    </div>
-                    <span style="font-weight: bold; color: var(--accent-purple);">78/100</span>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Based on Google Trends data</p>
-            </div>
-            <div class="glass-card">
-                <h4 style="color: var(--accent-purple); margin-bottom: 1rem;">Sentiment Analysis</h4>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="flex: 1; background: rgba(16, 185, 129, 0.1); border-radius: 10px; padding: 0.5rem;">
-                        <div style="background: linear-gradient(90deg, #10b981, #34d399); height: 8px; border-radius: 5px; width: 92%;"></div>
-                    </div>
-                    <span style="font-weight: bold; color: #10b981;">92%</span>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Positive brand sentiment</p>
-            </div>
-            <div class="glass-card">
-                <h4 style="color: var(--accent-purple); margin-bottom: 1rem;">Market Reach</h4>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="flex: 1; background: rgba(168, 85, 247, 0.1); border-radius: 10px; padding: 0.5rem;">
-                        <div style="background: var(--gradient-secondary); height: 8px; border-radius: 5px; width: 85%;"></div>
-                    </div>
-                    <span style="font-weight: bold; color: var(--accent-purple);">85%</span>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Global esports market penetration</p>
-            </div>
-        </div>
     </section>
 
     <!-- Brand Overview -->
@@ -325,7 +285,7 @@
                         <li class="tier-feature">Private investor channels</li>
                         <li class="tier-feature">Early access to news</li>
                     </ul>
-                    <a href="#contact" class="neon-button">Get Started</a>
+                    <a href="#" class="neon-button" onclick="showInvestorMessage(); return false;">Get Started</a>
                 </div>
                 <div class="sponsor-tier featured">
                     <h4 class="tier-name">Strategic Partner</h4>
@@ -338,7 +298,7 @@
                         <li class="tier-feature">Enhanced voting power</li>
                         <li class="tier-feature">Priority support access</li>
                     </ul>
-                    <a href="#contact" class="neon-button">Best Value</a>
+                    <a href="#" class="neon-button" onclick="showInvestorMessage(); return false;">Best Value</a>
                 </div>
                 <div class="sponsor-tier">
                     <h4 class="tier-name">Growth Partner</h4>
@@ -351,7 +311,7 @@
                         <li class="tier-feature">Revenue sharing options</li>
                         <li class="tier-feature">Exclusive partnership perks</li>
                     </ul>
-                    <a href="#contact" class="neon-button">Premium</a>
+                    <a href="#" class="neon-button" onclick="showInvestorMessage(); return false;">Premium Choice</a>
                 </div>
             </div>
         </div>
@@ -365,7 +325,7 @@
                 Join the winning team. Our investor relations team is ready to discuss how Void Esports can deliver exceptional returns through strategic partnership in the booming esports industry.
             </p>
             <div class="hero-buttons">
-                <a href="mailto:investors@voidesports.com" class="neon-button">Contact Investor Relations</a>
+                <a href="#" class="neon-button" onclick="showInvestorMessage(); return false;">Contact Investor Relations</a>
                 <a href="sponsors.html" class="neon-button">View Sponsorship Options</a>
             </div>
         </div>
@@ -406,66 +366,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Initialize Growth Chart
-        const ctx = document.getElementById('growthChart').getContext('2d');
-        const growthChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'TikTok Followers',
-                    data: [1000, 2000, 3500, 4500, 5200, 5918],
-                    borderColor: '#000000',
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                    tension: 0.4
-                }, {
-                    label: 'Discord Members',
-                    data: [2000, 5000, 8000, 12000, 15000, 17700],
-                    borderColor: '#5865F2',
-                    backgroundColor: 'rgba(88, 101, 242, 0.1)',
-                    tension: 0.4
-                }, {
-                    label: 'Instagram Followers',
-                    data: [50, 100, 150, 200, 250, 328],
-                    borderColor: '#E4405F',
-                    backgroundColor: 'rgba(228, 64, 95, 0.1)',
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: '#b8b8d1'
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        ticks: {
-                            color: '#b8b8d1'
-                        }
-                    },
-                    y: {
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        ticks: {
-                            color: '#b8b8d1',
-                            callback: function(value) {
-                                return (value / 1000000).toFixed(1) + 'M';
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
