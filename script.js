@@ -84,32 +84,60 @@ function initNavigation() {
     });
 }
 
-// Mobile menu toggle
-function initMobileMenu() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-    }
-    
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.replace('fa-times', 'fa-bars');
-        });
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (mobileMenuToggle && navLinks) {
+    mobileMenuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const isActive = navLinks.classList.contains('active');
+        mobileMenuToggle.innerHTML = isActive 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = isActive ? 'hidden' : '';
     });
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navLinks && navLinks.classList.contains('active')) {
+        if (!e.target.closest('.navbar')) {
+            navLinks.classList.remove('active');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Close mobile menu when clicking on a link
+const navItems = document.querySelectorAll('.nav-link');
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Close mobile menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        if (mobileMenuToggle) {
+            mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+        document.body.style.overflow = '';
+    }
+});
 
 // Intersection Observer for fade-in animations
 function initScrollAnimations() {
@@ -586,4 +614,109 @@ function showSponsorMessage() {
         `;
         document.head.appendChild(style);
     }
+}
+
+// Initialize all animations and effects
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize particle background
+    new ParticleBackground();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize counter animations
+    new CounterAnimation();
+    
+    // Initialize hover effects
+    new HoverEffects();
+    
+    // Initialize navbar scroll effect
+    initNavbarScroll();
+    
+    // Initialize scroll progress
+    initScrollProgress();
+    
+    // Set active navigation link
+    setActiveNavLink();
+    
+    console.log('🎨 Void Esports - All systems initialized');
+});
+
+// Scroll Progress Bar
+function initScrollProgress() {
+    const scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+    }
+}
+
+// Navbar Scroll Effect
+function initNavbarScroll() {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Hide/show navbar on scroll
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    }
+}
+
+// Active Navigation Link
+function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath || 
+            (currentPath === '/' && linkPath.endsWith('index.html')) ||
+            (currentPath.endsWith('/') && linkPath.includes(currentPath.slice(0, -1)))) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Intersection Observer for fade-in animations
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.scroll-animate, .fade-in, .fade-in-up, .scale-in');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
 }
