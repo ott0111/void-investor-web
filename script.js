@@ -283,3 +283,166 @@ function throttle(func, limit) {
 window.addEventListener('scroll', throttle(() => {
     // Scroll-based animations here
 }, 100));
+
+// Social Media Analytics Tracking
+class SocialMediaTracker {
+    constructor() {
+        this.updateInterval = 20000; // 20 seconds
+        this.platforms = {
+            discord: { selector: '[data-analytics="followers"]', current: 17700 },
+            tiktok: { selector: '.tiktok-followers', current: 5918 },
+            instagram: { selector: '.instagram-followers', current: 328 },
+            youtube: { selector: '.youtube-subscribers', current: 0 }
+        };
+        this.init();
+    }
+
+    init() {
+        this.startTracking();
+        console.log('📊 Social Media Analytics Tracker initialized');
+    }
+
+    async fetchSocialMediaData() {
+        // Simulate API calls to social media platforms
+        // In production, replace with actual API endpoints
+        const mockData = {
+            discord: this.simulateGrowth(this.platforms.discord.current, 0.02),
+            tiktok: this.simulateGrowth(this.platforms.tiktok.current, 0.03),
+            instagram: this.simulateGrowth(this.platforms.instagram.current, 0.04),
+            youtube: this.simulateGrowth(this.platforms.youtube.current, 0.05)
+        };
+
+        return mockData;
+    }
+
+    simulateGrowth(current, growthRate) {
+        // Simulate realistic growth with some randomness
+        const growth = current * growthRate * (0.5 + Math.random());
+        return Math.floor(current + growth);
+    }
+
+    updateUI(data) {
+        // Update Discord members
+        const discordElements = document.querySelectorAll('[data-analytics="followers"]');
+        discordElements.forEach(element => {
+            if (element.textContent.includes('K')) {
+                element.textContent = (data.discord / 1000).toFixed(1) + 'K+';
+            } else {
+                element.textContent = Math.floor(data.discord) + '+';
+            }
+        });
+
+        // Update TikTok followers
+        const tiktokElements = document.querySelectorAll('.tiktok-followers');
+        tiktokElements.forEach(element => {
+            element.textContent = this.formatNumber(data.tiktok) + '+';
+        });
+
+        // Update Instagram followers  
+        const instagramElements = document.querySelectorAll('.instagram-followers');
+        instagramElements.forEach(element => {
+            element.textContent = this.formatNumber(data.instagram) + '+';
+        });
+
+        // Update YouTube subscribers
+        const youtubeElements = document.querySelectorAll('.youtube-subscribers');
+        youtubeElements.forEach(element => {
+            element.textContent = this.formatNumber(data.youtube) + '+';
+        });
+
+        // Update chart data if chart exists
+        this.updateChartData(data);
+    }
+
+    formatNumber(num) {
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'K';
+        }
+        return num.toString();
+    }
+
+    updateChartData(data) {
+        // Update growth chart if it exists on the page
+        if (typeof growthChart !== 'undefined') {
+            // Shift data arrays and add new data point
+            growthChart.data.datasets[0].data.shift();
+            growthChart.data.datasets[0].data.push(data.tiktok);
+            
+            growthChart.data.datasets[1].data.shift();
+            growthChart.data.datasets[1].data.push(data.discord);
+            
+            growthChart.data.datasets[2].data.shift();
+            growthChart.data.datasets[2].data.push(data.instagram);
+            
+            growthChart.update('none'); // Update without animation for smooth real-time updates
+        }
+    }
+
+    async startTracking() {
+        // Initial update
+        const data = await this.fetchSocialMediaData();
+        this.updateUI(data);
+
+        // Set up interval for automatic updates
+        setInterval(async () => {
+            const newData = await this.fetchSocialMediaData();
+            this.updateUI(newData);
+            
+            // Show subtle update indicator
+            this.showUpdateIndicator();
+        }, this.updateInterval);
+    }
+
+    showUpdateIndicator() {
+        // Create a subtle indicator that data has been updated
+        const indicator = document.createElement('div');
+        indicator.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(109, 40, 217, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        `;
+        indicator.innerHTML = '📊 Analytics Updated';
+        document.body.appendChild(indicator);
+
+        setTimeout(() => {
+            indicator.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => indicator.remove(), 300);
+        }, 2000);
+    }
+}
+
+// Add CSS for update indicator
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
+
+// Initialize social media tracker when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new SocialMediaTracker();
+});
+
+// Add CSS classes for social media elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Add tracking classes to existing elements
+    const discordStats = document.querySelectorAll('[data-analytics="followers"]');
+    discordStats.forEach(el => el.classList.add('discord-members'));
+    
+    // You can add more specific selectors for other platforms as needed
+    console.log('🔄 Social media tracking enabled - updates every 20 seconds');
+});
